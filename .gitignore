@@ -1,0 +1,14 @@
+# Ignore backend IDE files
+/billingsoftware/.classpath
+/billingsoftware/.project
+/billingsoftware/.settings/
+/billingsoftware/target/
+
+# Ignore frontend build files
+/billing-software/node_modules/
+/billing-software/build/
+
+# Ignore OS and Git files
+.DS_Store
+Thumbs.db
+*.log
