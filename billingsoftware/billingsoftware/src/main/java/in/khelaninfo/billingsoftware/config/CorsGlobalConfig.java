@@ -13,8 +13,11 @@
 //		return new WebMvcConfigurer() {
 //			@Override
 //			public void addCorsMappings(CorsRegistry registry) {
-//				registry.addMapping("/**").allowedOrigins("http://localhost:5174") // React app origin
-//						.allowedMethods("GET", "POST", "PUT", "DELETE").allowedHeaders("*");
+//				registry.addMapping("/**")
+//				        .allowedOrigins("http://localhost:5173")
+//						.allowedMethods("GET", "POST", "PUT", "DELETE","OPTIONS")
+//						.allowedHeaders("*")
+//						.allowCredentials(true);
 //			}
 //		};
 //	}

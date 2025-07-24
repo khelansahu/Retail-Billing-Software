@@ -110,7 +110,7 @@ const onSubmitHandler = async (e) => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="decription" className="form-label">
+                <label htmlFor="description" className="form-label">
                   Description
                 </label>
                 <textarea

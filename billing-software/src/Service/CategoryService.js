@@ -34,4 +34,4 @@ export const getCategoryById = (categoryId) => {
 
 
 
-axios.defaults.withCredentials = false;
+// axios.defaults.withCredentials = false;

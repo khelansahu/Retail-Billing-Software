@@ -48,11 +48,15 @@ const Menubar = () => {
               Manage Categories
             </Link>
           </li>
-          <li className="nav-item">
+
+          {/* 
+          in future we can implement user part  
+           */}
+          {/* <li className="nav-item">
             <Link className="nav-link" to="/manageuser">
               Manage Users
             </Link>
-          </li>
+          </li> */}
            <li className="nav-item">
             <Link className="nav-link" to="/inventry">
               Inventry

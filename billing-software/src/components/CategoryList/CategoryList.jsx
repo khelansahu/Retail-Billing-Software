@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import { AppContext } from "./../../context/AppContext";
 import "./Category.css";
 import { CiSearch } from "react-icons/ci";
-import axios from "axios";
 import { deleteCategory } from "../../Service/CategoryService";
 import toast from "./../../../node_modules/react-hot-toast/src/index";
+import { MdDelete } from "react-icons/md";
+
 
 const CategoryList = () => {
   const { category, setCategory } = useContext(AppContext);
@@ -83,7 +84,8 @@ const CategoryList = () => {
                     className="btn btn-danger btn-sm"
                     onClick={() => deletByCategoryId(category.categoryId)}
                   >
-                    remove
+                   <MdDelete />
+
                   </button>
                 </div>
               </div>
