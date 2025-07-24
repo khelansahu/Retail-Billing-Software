@@ -18,7 +18,7 @@ const ItemList = () => {
   const deleteItemById = async (itemId) => {
     try {
       const response = await deleteItem(itemId);
-      if (response.status === 202 || response.status === 202) {
+      if (response.status === 200 || response.status === 202) {
         const updatedItem = item.filter((item) => item.itemId !== itemId);
         setItem(updatedItem);
         toast.success("Item deleted.");
