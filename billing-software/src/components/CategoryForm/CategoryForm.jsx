@@ -67,9 +67,14 @@ const onSubmitHandler = async (e) => {
   }
 };
   return (
+
+     <div
+      className="item-form-container"
+      style={{ height: "100vh", overflowY: "auto", overflowX: "hidden" }}
+    >
     <div className="mx-2 mt-2">
       <div className="row">
-        <div className="card col-md-12 form-container">
+        <div className="card col-md-12 form-container rounded-3">
           <div className="card-body">
             <form onSubmit={onSubmitHandler}>
               <div className="mb-3">
@@ -150,6 +155,7 @@ const onSubmitHandler = async (e) => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

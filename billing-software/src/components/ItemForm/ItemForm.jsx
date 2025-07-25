@@ -38,7 +38,7 @@ const ItemForm = () => {
         const savedItem=response.data.data;
         setItem((prev)=>[...prev,savedItem]);
 
-        //TODO upadte the category state for counting
+        //TODO upadte the category state for counting...
         
         if (image) {
               toast.success("item added successfully with image");
@@ -67,7 +67,7 @@ const ItemForm = () => {
     >
       <div className="mx-2 mt-2">
         <div className="row">
-          <div className="card col-md-12 form-container">
+          <div className="card col-md-12 form-container rounded-3">
             <div className="card-body">
               <form onSubmit={onSubmitHandler}>
                 <div className="mb-3">
@@ -145,7 +145,7 @@ const ItemForm = () => {
                     Description
                   </label>
                   <textarea
-                    rows="2"
+                    rows="1"
                     name="description"
                     id="description"
                     className="form-control"

@@ -33,8 +33,8 @@ const ItemList = () => {
 
   return (
     <div
-      className="category-list-container"
-      style={{ height: "100vh", overflowX: "hidden", overflowY: "auto" }}
+      className="category-list-container no-scrollbar"
+      style={{ height: "100vh", overflowX: "hidden", overflowY: "auto"}}
     >
       <div className="row pe-2">
         <div className="input-group mb-3">

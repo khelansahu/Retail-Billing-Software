@@ -8,7 +8,7 @@ import { MdDelete } from "react-icons/md";
 
 
 const CategoryList = () => {
-  const { category, setCategory } = useContext(AppContext);
+  const { category, setCategory,item } = useContext(AppContext);
   const [searchString, setSearchString] = useState("");
 
   const filterCategory = category.filter((category) =>
@@ -60,38 +60,40 @@ const CategoryList = () => {
         </div>
       </div>
       <div className="row g-3 pe-2">
-        {filterCategory.map((category, index) => (
-          <div key={index} className="col-12">
-            <div
-              className="card p-3"
-              style={{ backgroundColor: category.bgColor }}
-            >
-              <div className="d-flex align-items-center">
-                <div style={{ marginRight: "15px" }}>
-                  <img
-                    src={`data:image/jpeg;base64,${category.imgUrl}`}
-                    alt={category.name}
-                    className="category-image"
-                  />
-
-                </div>
-                <div className="flex-grow-1">
-                  <h5 className="mb-1 text-white">{category.name}</h5>
-                  <p className="mb-0 text-white">{category.items} Items</p>
-                </div>
-                <div>
-                  <button
-                    className="btn btn-danger btn-sm"
-                    onClick={() => deletByCategoryId(category.categoryId)}
-                  >
-                   <MdDelete />
-
-                  </button>
-                </div>
-              </div>
-            </div>
+        
+        {filterCategory.map((category, index) => {
+  // Count items where category.categoryId matche
+  const itemCount = item.filter(it => it.category.categoryId === category.categoryId).length;
+  return (
+    <div key={index} className="col-12">
+      <div className="card p-3" style={{ backgroundColor: category.bgColor }}>
+        <div className="d-flex align-items-center">
+          <div style={{ marginRight: "15px" }}>
+            <img
+              src={`data:image/jpeg;base64,${category.imgUrl}`}
+              alt={category.name}
+              className="category-image"
+            />
           </div>
-        ))}
+          <div className="flex-grow-1">
+            <h5 className="mb-1 text-white">{category.name}</h5>
+            {/* item count  */}
+            <p className="mb-0 text-white">{itemCount} Items</p>
+          </div>
+          <div>
+            <button
+              className="btn btn-danger btn-sm"
+              onClick={() => deletByCategoryId(category.categoryId)}
+            >
+              <MdDelete />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+})}
+
       </div>
     </div>
   );

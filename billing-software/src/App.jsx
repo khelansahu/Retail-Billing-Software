@@ -8,6 +8,7 @@ import ManageCategory from './pages/ManageCategory/ManageCategory'
 import ManageUsers from './pages/ManageUsers/ManageUsers'
 import Inventry from './pages/Inventry/Inventry'
 import { Toaster } from './../node_modules/react-hot-toast/src/components/toaster';
+import "./App.css"
 
 const App = () => {
   return (
