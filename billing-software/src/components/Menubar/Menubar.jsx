@@ -4,10 +4,8 @@ import { assests } from "../../assets/assests.js";
 import "./Menubar.css";
 import profile from "../../assets/fevicon.png";
 import { Link } from "react-router-dom";
-const Menubar = () => {
-  const logout=()=>{
-    
-  }
+const Menubar = ({ onLogout }) => {
+  // const logout = () => {};
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-2">
       <a className="navbar-brand" href="#">
@@ -82,14 +80,22 @@ const Menubar = () => {
             >
               <img src={profile} alt="" height={35} width={35} />
             </a>
-            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a href="#!" className="dropdown-item">Setting</a>
-              <a href="#!" className="dropdown-item">Activity Log</a>
+            <ul
+              className="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdown"
+            >
+              <a href="#!" className="dropdown-item">
+                Setting
+              </a>
+              <a href="#!" className="dropdown-item">
+                Activity Log
+              </a>
               <li>
                 <hr className="dropdown-divider" />
               </li>
-              <a href="#!" className="dropdown-item" onClick={logout}>LogOut</a>
-
+              <a href="#!" className="dropdown-item" onClick={onLogout}>
+                LogOut
+              </a>
             </ul>
           </li>
         </ul>
