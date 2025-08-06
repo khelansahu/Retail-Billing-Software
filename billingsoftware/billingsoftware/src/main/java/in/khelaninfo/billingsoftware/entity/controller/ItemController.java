@@ -29,7 +29,7 @@ public class ItemController {
 
 	@Autowired
 	private ItemService itemService;
-	
+
 //	@PostMapping("/additem")
 //	public ResponseEntity<ResponseStructure<ItemEntity>> addItem(
 //			@RequestPart("itemEntity")  itemRequest itemJson,
@@ -37,25 +37,22 @@ public class ItemController {
 //		
 //		return itemService.addItem(itemJson, file);
 //	}
-	
+
 	@PostMapping(value = "/additem", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	public ResponseEntity<ResponseStructure<ItemEntity>> addItem(
-	        @RequestPart("itemEntity") String itemJson,
-	        @RequestPart(value = "file", required = false) MultipartFile file) throws IOException {
+	public ResponseEntity<ResponseStructure<ItemEntity>> addItem(@RequestPart("itemEntity") String itemJson,
+			@RequestPart(value = "file", required = false) MultipartFile file) throws IOException {
 
-	    ObjectMapper mapper = new ObjectMapper();
-	    itemRequest itemDto = mapper.readValue(itemJson, itemRequest.class);
+		ObjectMapper mapper = new ObjectMapper();
+		itemRequest itemDto = mapper.readValue(itemJson, itemRequest.class);
 
-	    return itemService.addItem(itemDto, file);
+		return itemService.addItem(itemDto, file);
 	}
 
-	
-	
 	@GetMapping("/fetchitems")
 	public ResponseEntity<ListResponseStructure<ItemEntity>> fetchItems() {
 		return itemService.fetchItems();
 	}
-	
+
 	@DeleteMapping("/deleteitem/{itemId}")
 	public ResponseEntity<ResponseStructure<ItemEntity>> deleteItemsById(@PathVariable String itemId) {
 		return itemService.deleteItemById(itemId);

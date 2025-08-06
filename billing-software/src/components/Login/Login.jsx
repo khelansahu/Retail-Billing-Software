@@ -20,7 +20,7 @@ const Login = ({ onLoginSuccess }) => {
       if (response.status === 202) {
         console.log("login succesfull...");
         toast.success("Login succesfully...");
-        onLoginSuccess();
+        onLoginSuccess()
       } else {
         console.log("login faild...");
         toast.error("Login failed: Invalid credentials");
@@ -34,6 +34,7 @@ const Login = ({ onLoginSuccess }) => {
 
   return (
     <div className="login-container">
+        <h1>Retail Billing Software</h1>
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Login</h2>
         <label htmlFor="user">User ID</label>
