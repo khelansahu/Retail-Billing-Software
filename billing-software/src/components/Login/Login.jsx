@@ -1,0 +1,66 @@
+    import React, { useState } from 'react';
+    import './Login.css';
+    import { adminLogin } from '../../Service/AdminService';
+    // import { toast } from 'react-toastify';
+
+
+    const Login = () => {
+    const [userId, setUserId] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit =async (e) => {
+        e.preventDefault();
+        console.log(userId);
+        console.log(password);
+        const admin={
+            email:userId,
+            password:password
+        }
+        try {
+            const response=await adminLogin(admin);
+            if (response.status===202) {
+                console.log("login succesfull...")
+               toast.success('Login successful!');
+            }else{
+                console.log("login faild...")
+                toast.error('Login failed: Invalid credentials');
+                setPassword('');
+                setUserId('');
+            }
+        } catch (error) {
+            toast.error('Something went wrong! Try again.');
+        }
+
+    };
+
+    return (
+        <div className="login-container">
+        <form className="login-form" onSubmit={handleSubmit}>
+            <h2>Login</h2>
+            <label htmlFor="user">User ID</label>
+            <input
+            type="text"
+            id="user"
+            value={userId}
+            onChange={(e) => setUserId(e.target.value)}
+            placeholder="Enter your User ID"
+            required
+            />
+
+            <label htmlFor="password">Password</label>
+            <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
+            required
+            />
+<br /><br />
+            <button type="submit">Login</button>
+        </form>
+        </div>
+    );
+    };
+
+    export default Login;

@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @jakarta.persistence.Table(name="tbl_category")
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

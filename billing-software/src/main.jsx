@@ -8,12 +8,14 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter } from "react-router-dom";
 import { AppContextProvider } from "./context/AppContext.jsx";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import Login from "./components/Login/Login.jsx";
 
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <AppContextProvider>
       <App />
+      {/* <Login/> */}
     </AppContextProvider>
   </BrowserRouter>
 );

@@ -9,6 +9,10 @@ import CartSummary from "../../components/CartSummary/CartSummary";
 const Explore = () => {
   const {category}  = useContext(AppContext);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [cutomerName, setCustomerName] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+
+
   
   console.log(category);
   // console.log("hiii")
@@ -23,22 +27,32 @@ const Explore = () => {
         </div>
         <hr className="horizontal-line" />
         <div className="second-row" style={{ overflow: "auto" }}>
-          <DisplayItem/>
+          <DisplayItem  selectedCategory={selectedCategory}/>
         </div>
       </div>
       <div className="right-column d-flex flex-column">
         <div className="customer-form-container" style={{ height: "15%" }}>
-          <CustomerForm/>
+          <CustomerForm
+          cutomerName={cutomerName}
+          setCustomerName={setCustomerName}
+          mobileNumber={mobileNumber}
+          setMobileNumber={setMobileNumber}
+          />
         </div>
         <hr className="my-3 text-light" />
         <div
           className="cart-items-container"
-          style={{ height: "55%", overflowY: "auto" }}
+          style={{ height: "45%", overflowY: "auto" }}
         >
           <CartItem/>
         </div>
         <div className="cart-summary-container" style={{ height: "30%" }}>
-          <CartSummary/>
+          <CartSummary
+           cutomerName={cutomerName}
+          setCustomerName={setCustomerName}
+          mobileNumber={mobileNumber}
+          setMobileNumber={setMobileNumber}
+          />
         </div>
       </div>
     </div>

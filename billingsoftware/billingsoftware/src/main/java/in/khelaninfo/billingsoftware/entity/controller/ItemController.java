@@ -44,7 +44,7 @@ public class ItemController {
 	        @RequestPart(value = "file", required = false) MultipartFile file) throws IOException {
 
 	    ObjectMapper mapper = new ObjectMapper();
-	    itemRequest itemDto = mapper.readValue(itemJson, itemRequest.class); // ✅ Convert JSON string to DTO
+	    itemRequest itemDto = mapper.readValue(itemJson, itemRequest.class);
 
 	    return itemService.addItem(itemDto, file);
 	}
